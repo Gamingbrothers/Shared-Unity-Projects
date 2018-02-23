@@ -450,9 +450,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.5813596, y: -0.000000039819266, z: -0.000000021012607, w: 0.8136476}
+    m_Target: {x: 0.5666181, y: -0.0024719753, z: 0.0016998376, w: 0.82397604}
     speed: 2
-    m_Value: {x: -0.5813597, y: 0.000000039819266, z: 0.000000021012607, w: -0.8136476}
+    m_Value: {x: 0.5666176, y: -0.0024719732, z: 0.0016998362, w: 0.8239753}
   m_Size:
     m_Target: 87.72972
     speed: 2
@@ -600,8 +600,8 @@ MonoBehaviour:
     height: 655
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 58010000
-    m_LastClickedID: 0
+    m_SelectedIDs: 3e2a0000
+    m_LastClickedID: 10814
     m_ExpandedIDs: 9afbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -669,7 +669,8 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\miwi\OneDrive\Unity\.git\Pathfinding ver 2
+  m_LastProjectPath: C:\Users\miwi\OneDrive\Shared Unity Projects\Pathfinding ver
+    2
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
