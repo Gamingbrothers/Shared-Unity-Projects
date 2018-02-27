@@ -11,6 +11,7 @@ public class Unit : MonoBehaviour {
     public float speed = 20f;
     public float turnDst = 5f;
     public float turnSpeed = 3f;
+    public float stoppingDst = 10f;
 
     Path path;
 
@@ -25,7 +26,7 @@ public class Unit : MonoBehaviour {
     {
         if (pathSuccessful)
         {
-            path = new Path(waypoints, transform.position,turnDst);
+            path = new Path(waypoints, transform.position,turnDst,stoppingDst);
 
             StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
@@ -39,7 +40,7 @@ public class Unit : MonoBehaviour {
             yield return new WaitForSeconds(.3f);
         }
 
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
 
         float sqrMoveTreshold = pathUpdateMoveTreshhold * pathUpdateMoveTreshhold;
         Vector3 targetPosOld = target.position;
@@ -49,7 +50,7 @@ public class Unit : MonoBehaviour {
             yield return new WaitForSeconds(minPathUpdateTime);
             if ((target.position- targetPosOld).sqrMagnitude > sqrMoveTreshold)
             {
-                PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+                PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
                 targetPosOld = target.position;
             }
         }
@@ -61,6 +62,8 @@ public class Unit : MonoBehaviour {
         bool followingPath = true;
         int pathIndex = 0;
         transform.LookAt(path.lookPoints[0]);
+
+        float speedPercent = 1f;
 
         while (followingPath)
         {
@@ -79,9 +82,20 @@ public class Unit : MonoBehaviour {
             }
             if (followingPath)
             {
+                if (pathIndex >= path.slowDownIndex && stoppingDst > 0)
+                {
+                    speedPercent = Mathf.Clamp01(path.turnBoundaries[path.finishLineIndex].DistanceFromPoint(pos2D) / stoppingDst);
+                    if (speedPercent < 0.01f)
+                    {
+                        followingPath = false;
+                        Destroy(gameObject);
+                    }
+
+                }
+
                 Quaternion targetRotation = Quaternion.LookRotation(path.lookPoints[pathIndex] - transform.position);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
-                transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
+                transform.Translate(Vector3.forward * Time.deltaTime * speed*speedPercent, Space.Self);
             }
 
             yield return null;

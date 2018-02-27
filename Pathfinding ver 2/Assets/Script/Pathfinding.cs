@@ -6,21 +6,14 @@ using System;
 
 public class Pathfinding : MonoBehaviour {
 
-    PathRequestManager requestManager;  
     Grid grid;
 
     void Awake()
     {
-        requestManager = GetComponent<PathRequestManager>();
         grid = GetComponent<Grid>();
     }
 
-    public void StartFindPath(Vector3 startPos, Vector3 targetPos)
-    {
-        StartCoroutine(FindPath(startPos, targetPos));
-    }
-
-    IEnumerator FindPath(Vector3 startPos,Vector3 targetPos)
+    public void FindPath(PathRequest request, Action<PathResult> callback)
     {
         //Stopwatch sw = new Stopwatch();
         //sw.Start();
@@ -28,8 +21,8 @@ public class Pathfinding : MonoBehaviour {
         Vector3[] waypoints = new Vector3[0];
         bool pathSuccess = false;
 
-        Node startNode = grid.NodeFromWorldPoint(startPos);
-        Node targetNode = grid.NodeFromWorldPoint(targetPos);
+        Node startNode = grid.NodeFromWorldPoint(request.pathStart);
+        Node targetNode = grid.NodeFromWorldPoint(request.pathEnd);
 
         if(startNode.walkable && targetNode.walkable)
         {
@@ -76,12 +69,12 @@ public class Pathfinding : MonoBehaviour {
 
             }
         }
-        yield return null;
         if (pathSuccess)
         {
             waypoints = RetracePath(startNode, targetNode);
+            pathSuccess = waypoints.Length > 0;
         }
-        requestManager.FinnishedProcessedPath(waypoints, pathSuccess);
+        callback(new PathResult(waypoints, pathSuccess, request.callback));
     }
     
     Vector3[] RetracePath(Node startNode, Node endNode)
@@ -110,7 +103,7 @@ public class Pathfinding : MonoBehaviour {
             if (directionNew != directionOld)
             {
                 waypoints.Add(path[i].worldPosition);
-                //Debug.Log(path[i].worldPosition);
+                Debug.Log(path[i].worldPosition);
             }
             directionOld = directionNew;
         }
