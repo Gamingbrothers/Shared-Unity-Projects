@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -287,7 +287,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 1
+=======
+  m_RootOrder: 2
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &199413640
 Prefab:
@@ -791,7 +795,11 @@ RectTransform:
   - {fileID: 1943607891}
   - {fileID: 1898170619}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 6
+=======
+  m_RootOrder: 7
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -824,7 +832,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 5
+=======
+  m_RootOrder: 6
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &787545953
 Prefab:
@@ -955,7 +967,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 0
+=======
+  m_RootOrder: 1
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
 --- !u!1001 &835140866
 Prefab:
@@ -1065,7 +1081,11 @@ Transform:
   - {fileID: 322140026}
   - {fileID: 221296442}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 3
+=======
+  m_RootOrder: 4
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &935839382
 GameObject:
@@ -1097,7 +1117,11 @@ Transform:
   - {fileID: 2015345013}
   - {fileID: 1568014418}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 2
+=======
+  m_RootOrder: 3
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1409113110
 Prefab:
@@ -1273,6 +1297,13 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 35
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 100000, guid: 1aa39b2f6e558614eb83d858a6ec61ca, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1aa39b2f6e558614eb83d858a6ec61ca, type: 2}
   m_IsPrefabParent: 0
@@ -1289,10 +1320,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1565602985}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Layer: 10
 =======
   m_Layer: 0
 >>>>>>> parent of cf08089... Pathfinding added
+=======
+  m_Layer: 10
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1350,11 @@ Transform:
   - {fileID: 427010786}
   - {fileID: 297856389}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 4
+=======
+  m_RootOrder: 5
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1568014417
 Prefab:
@@ -2186,5 +2225,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 7
+=======
+  m_RootOrder: 8
+>>>>>>> 41563f9872b11032832f09bcaa5e8ba5e2294c3b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
